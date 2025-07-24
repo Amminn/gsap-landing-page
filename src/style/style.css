@@ -11,4 +11,52 @@ html {
   font-optical-sizing: auto;
   font-style: normal;
   font-variation-settings: "wdth" 100, "YTLC" 500;
+  color: white;
+}
+
+body {
+  min-height: 100svh;
+  width: 100vw;
+}
+
+.splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  color: white;
+  padding-block: 2rem;
+}
+.splash-screen .container {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  outline: 1px solid orange;
+}
+.splash-screen .container .cool-animation {
+  position: absolute;
+  font-size: 2.2rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid white;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 50px;
+  margin: auto;
+}
+
+.cool-animation {
+  margin: auto;
+}
+
+.progress-line {
+  margin-top: auto;
+  width: 100%;
+  height: 5px;
+  background: white;
 }/*# sourceMappingURL=style.css.map */
