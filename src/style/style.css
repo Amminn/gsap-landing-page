@@ -42,17 +42,15 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  overflow: hidden;
-  width: fit-content;
-  height: 128px;
-  margin: auto;
+  overflow: hidden; /* This is crucial for clipping the animation */
+  width: max-content;
 }
 .splash-screen .container .cool-animation .wrapper {
   display: flex;
   gap: 2.2rem;
 }
 .splash-screen .container .cool-animation .wrapper h2 {
-  font-size: 90px;
+  font-size: 6vw;
   font-weight: 900;
   white-space: nowrap;
 }
@@ -63,7 +61,7 @@ body {
 }
 .splash-screen .container .cool-animation .wrapper .y-slider span {
   display: inline-block;
-  font-size: 90px;
+  font-size: 6vw;
   font-weight: 900;
 }
 

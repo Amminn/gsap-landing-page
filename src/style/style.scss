@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
 
+$solution-size: 6vw;
+
 * {
   padding: 0;
   margin: 0;
@@ -128,17 +130,16 @@ body {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      overflow: hidden;
-      width: fit-content;
-      height: 128px;
-      margin: auto;
+      overflow: hidden; /* This is crucial for clipping the animation */
+      width: max-content;
+      // border: 1px solid white;
 
       .wrapper {
         display: flex;
         gap: 2.2rem;
 
         h2 {
-          font-size: 90px;
+          font-size: $solution-size; // This is 6vw
           font-weight: 900;
           white-space: nowrap;
         }
@@ -147,12 +148,10 @@ body {
           display: flex;
           flex-direction: column;
           min-width: fit-content;
-          // transform: translate(0, -50%);
-          // transition: 0.3s ease-in-out;
+
           span {
-            // border: 1px solid white;
             display: inline-block;
-            font-size: 90px;
+            font-size: $solution-size; // This is 6vw
             font-weight: 900;
           }
         }
