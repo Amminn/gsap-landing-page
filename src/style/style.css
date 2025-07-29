@@ -64,10 +64,15 @@ body {
   font-size: 6vw;
   font-weight: 900;
 }
+.splash-screen .container .counter {
+  text-align: right;
+  padding-inline: 3rem;
+  font-size: 1.6rem;
+}
 
 .progress-line {
   margin-top: auto;
-  width: 100%;
+  width: 0%;
   height: 5px;
   background: white;
 }
