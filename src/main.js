@@ -13,8 +13,9 @@ const counter = { value: 0 };
 // Clean GSAP counter animation with progress bar
 gsap.to(counter, {
   value: 100,
-  duration: 6,
-  ease: "circ.out",
+  // duration: 6,
+  duration: 0.1,
+  // ease: "circ.out",
   onUpdate: updateProgress,
   onComplete: hideSplashScreen,
 });
@@ -27,10 +28,15 @@ function updateProgress() {
 function hideSplashScreen() {
   const tl = gsap.timeline();
   const elementsToHide = [coolAnimation, progressLine, counterContainer];
-  tl.to(elementsToHide, { opacity: "0", duration: 0.3 }).to(splashScreen, {
+  tl.to(elementsToHide, {
+    opacity: "0",
+    duration: 0.1,
+    // , duration: 0.3
+  }).to(splashScreen, {
     height: "0",
     y: "-100%",
-    duration: 1,
+    // duration: 1,
+    duration: 0.1,
     ease: "power2.inOut",
     onComplete: () => {
       shouldAnimateWrapper = false;
