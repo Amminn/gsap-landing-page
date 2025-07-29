@@ -5,6 +5,8 @@ const counterContainer = document.querySelector(".counter");
 const progressCounter = document.querySelector(".progress-value");
 const splashScreen = document.querySelector(".splash-screen");
 
+let shouldAnimateWrapper = true;
+
 // An object to animate a value from 0 to 100
 const counter = { value: 0 };
 
@@ -30,6 +32,13 @@ function hideSplashScreen() {
     y: "-100%",
     duration: 1,
     ease: "power2.inOut",
+    onComplete: () => {
+      shouldAnimateWrapper = false;
+      gsap.killTweensOf(ySlider);
+      gsap.killTweensOf(coolAnimation);
+      window.removeEventListener("resize", handleResize);
+      clearTimeout(resizeTimeout);
+    },
   });
 }
 
@@ -37,12 +46,15 @@ function hideSplashScreen() {
 const ySlider = document.querySelector(".y-slider");
 const coolAnimation = document.querySelector(".cool-animation");
 
+let resizeTimeout;
+
 if (ySlider && coolAnimation) {
   coolAnimation.style.height = `${
     ySlider.querySelector("span").offsetHeight
   }px`;
 
   function animateSlider() {
+    if (!shouldAnimateWrapper) return;
     const sliderSpanHeight = ySlider.querySelector("span").offsetHeight;
 
     gsap.to(ySlider, {
@@ -54,21 +66,22 @@ if (ySlider && coolAnimation) {
         const firstSpan = ySlider.querySelector("span");
         ySlider.appendChild(firstSpan);
         gsap.set(ySlider, { y: 0 });
-        animateSlider(); // Continue the animation loop
+        animateSlider();
       },
     });
   }
 
   animateSlider();
 
-  let resizeTimeout;
-  window.addEventListener("resize", () => {
-    coolAnimation.style.height = `${
-      ySlider.querySelector("span").offsetHeight
-    }px`;
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-      console.log("Window resized, next animation cycle will use new height.");
-    }, 100); // Debounce the resize event
-  });
+  window.addEventListener("resize", handleResize);
+}
+
+function handleResize() {
+  coolAnimation.style.height = `${
+    ySlider.querySelector("span").offsetHeight
+  }px`;
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(() => {
+    console.log("Window resized, next animation cycle will use new height.");
+  }, 100);
 }
