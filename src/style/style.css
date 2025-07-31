@@ -77,4 +77,26 @@ body {
   background: white;
 }
 
+.main-content .container {
+  padding-inline: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  outline: 1px solid orange;
+}
+.main-content header {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.main-content header .logo a {
+  text-decoration: none;
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: black;
+}
+.main-content header .nav {
+  color: black;
+}
+
 /*# sourceMappingURL=style.css.map */
