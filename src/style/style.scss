@@ -186,6 +186,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 6rem;
 
     .logo {
       a {
@@ -232,7 +233,33 @@ body {
 
   main {
     .hero-section {
-      display: flex;
+      .container {
+        display: flex;
+        height: calc(100vh - 170px);
+        .right-side {
+          width: 60%;
+        }
+
+        > div {
+          width: 40%;
+          padding: 2rem;
+          border: 1px solid black;
+          color: black;
+
+          canvas {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            display: block;
+            border: 1px solid black;
+            height: auto; // Let aspect-ratio control height
+            max-width: 100%;
+          }
+
+          h2 {
+            color: black;
+          }
+        }
+      }
     }
   }
 }

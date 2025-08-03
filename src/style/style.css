@@ -58,6 +58,7 @@ body {
   display: flex;
   flex-direction: column;
   min-width: fit-content;
+  text-align: center;
 }
 .splash-screen .container .cool-animation .wrapper .y-slider span {
   display: inline-block;
@@ -81,13 +82,13 @@ body {
   padding-inline: 2rem;
   max-width: 1200px;
   margin: 0 auto;
-  outline: 1px solid orange;
 }
 .main-content header {
   min-height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 6rem;
 }
 .main-content header .logo a {
   text-decoration: none;
@@ -96,6 +97,57 @@ body {
   color: black;
 }
 .main-content header .nav {
+  color: black;
+}
+.main-content header .nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.main-content header .nav ul a {
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+.main-content header .nav ul a:hover {
+  opacity: 0.7;
+}
+.main-content header .cta button {
+  border: 1px solid rgb(63, 63, 63);
+  border-radius: 20px;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+.main-content main .hero-section .container {
+  display: flex;
+  height: calc(100vh - 170px);
+}
+.main-content main .hero-section .container .right-side {
+  width: 60%;
+}
+.main-content main .hero-section .container > div {
+  width: 40%;
+  padding: 2rem;
+  border: 1px solid black;
+  color: black;
+}
+.main-content main .hero-section .container > div canvas {
+  width: 100%;
+  aspect-ratio: 1/1;
+  display: block;
+  border: 1px solid black;
+  height: auto;
+  max-width: 100%;
+}
+.main-content main .hero-section .container > div h2 {
   color: black;
 }
 
