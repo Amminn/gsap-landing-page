@@ -91,14 +91,3 @@ function handleResize() {
     console.log("Window resized, next animation cycle will use new height.");
   }, 100);
 }
-
-const f = (s) => {
-  return s === s.toUpperCase() && s.length <= 9;
-};
-
-console.log(f("A")); // true);
-console.log(f("b")); // false);
-console.log(f("C")); // true);
-console.log(f("a")); // false);
-console.log(f("Z")); // true);
-console.log(f("f")); // false);
