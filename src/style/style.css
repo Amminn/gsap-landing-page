@@ -129,6 +129,7 @@ body {
 .main-content main .hero-section .container {
   display: flex;
   height: calc(100vh - 170px);
+  margin-bottom: 5rem;
 }
 .main-content main .hero-section .container .right-side {
   width: 60%;
@@ -149,6 +150,19 @@ body {
 }
 .main-content main .hero-section .container > div h2 {
   color: black;
+}
+
+#canvas {
+  max-width: 100%;
+  width: 95%;
+  height: 100svh;
+  border: 1px solid orange;
+  margin: auto;
+  background: black;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /*# sourceMappingURL=style.css.map */

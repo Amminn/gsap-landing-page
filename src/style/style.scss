@@ -236,6 +236,7 @@ body {
       .container {
         display: flex;
         height: calc(100vh - 170px);
+        margin-bottom: 5rem;
         .right-side {
           width: 60%;
         }
@@ -262,4 +263,17 @@ body {
       }
     }
   }
+}
+
+#canvas {
+  max-width: 100%;
+  width: 95%;
+  height: 100svh;
+  border: 1px solid orange;
+  margin: auto;
+  background: black;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
