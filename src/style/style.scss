@@ -20,6 +20,11 @@ html {
 body {
   min-height: 100svh;
   width: 100vw;
+  background: #000;
+}
+
+button {
+  cursor: pointer;
 }
 
 //  ===== second font =====
@@ -193,41 +198,49 @@ body {
         text-decoration: none;
         font-size: 2.4rem;
         font-weight: 900;
-        color: black;
+        color: white;
+        cursor: pointer;
       }
     }
 
-    .nav {
-      color: black;
-      ul {
-        list-style-type: none;
-        display: flex;
-        gap: 2rem;
-        align-items: center;
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
 
-        a {
-          font-size: 1.6rem;
-          text-decoration: none;
-          color: black;
-          font-weight: 500;
-          transition: opacity 0.3s ease;
-          &:hover {
-            opacity: 0.7;
+      .nav {
+        color: white;
+
+        ul {
+          list-style-type: none;
+          display: flex;
+          gap: 2rem;
+          align-items: center;
+
+          a {
+            font-size: 1.6rem;
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+            &:hover {
+              opacity: 0.7;
+            }
           }
         }
       }
-    }
 
-    .cta button {
-      border: 1px solid rgb(63, 63, 63);
-      border-radius: 20px;
-      padding: 1rem 2rem;
-      background-color: transparent;
-      font-size: 1.6rem;
-      font-weight: 700;
-      text-decoration: none;
-      color: black;
-      cursor: pointer;
+      .cta button {
+        border: 1px solid rgb(63, 63, 63);
+        border-radius: 5px;
+        padding: 1rem 2rem;
+        background-color: transparent;
+        font-size: 1.6rem;
+        font-weight: 700;
+        text-decoration: none;
+        color: white;
+        cursor: pointer;
+      }
     }
   }
 
@@ -291,55 +304,44 @@ body {
 
 #test {
   background: black;
-
   display: block;
-  // position: absolute;
-  // top: 0;
-  // left: 0;
 }
 
 #canvas-container {
-  max-width: 900px; /* The canvas will not get wider than this */
-  width: 90%; /* It will take up 90% of the page width */
-  margin: 2rem auto; /* Center the container on the page */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-
-  /* This makes the container responsive. Height will be 9/16 of the width. */
-  aspect-ratio: 16 / 9;
-  border: 1px solid blue;
-  display: flex;
-  align-items: center;
-  .left-side {
-    width: 50%;
-    color: black;
-    h1 {
-      font-size: 5rem;
-      font-weight: 900;
-    }
-
-    p {
-      font-size: 1.7rem;
-      margin-bottom: 2rem;
-    }
-    button {
-      padding: 1rem 2.4rem;
-      font-size: 2rem;
-      border-radius: 1rem;
-      border: 1px solid black;
-      background-color: transparent;
-      margin-bottom: 2rem;
-    }
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  background: black;
+  border: 1px solid white;
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
   }
-}
+  .left-side {
+    flex: 1;
+    min-width: 300px;
+  }
+  .left-side h1 {
+    font-size: 2.5rem;
+  }
 
-/* 
- * The canvas itself just needs to fill its container.
- * The actual pixel dimensions will be set by JavaScript.
- */
-#my-particle-canvas {
-  display: block;
-  width: 50%;
-  height: 100%;
-  background-color: #000; /* Background of the canvas itself */
-  border: 1px solid orange;
+  .canvas-wrapper {
+    flex: 1;
+    min-width: 300px;
+    height: 650px;
+    border: 1px solid orange;
+  }
+
+  #my-particle-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    border-radius: 4px;
+  }
 }
