@@ -34,7 +34,7 @@
         <header>
           <div class="logo">
             <h2>
-              <a href="/"> Fle<span>X</span> </a>
+              <a href="/"> Studio<span>X</span> </a>
             </h2>
           </div>
           <div class="header-right">
@@ -54,62 +54,61 @@
       </div>
 
       <main>
-        <!-- <section class="hero-section">
+        <section class="hero-canvas-section section" id="canvas-container">
           <div class="container">
             <div class="left-side">
-              <p></p>
-              <h1>Got Problems?</h1>
-              <p>Full Stack Custom solution</p>
-              <button class="cta">Click</button>
+              <h1 class="main-title">RANDOM TITLE</h1>
+              <p class="hero-text">
+                This is random text to fill the space in here with no sense at
+                all and i like what im doing in here
+              </p>
+              <button class="button hero-button">Explore Our Work</button>
             </div>
-            <div class="right-side">
-              <canvas id="canvas1"></canvas>
-              <div class="controls">
-                <label for="reesolution" id="resolutionLabel">
-                  resolution <span>5px</span>
-                </label>
-                <input
-                  type="range"
-                  id="resolution"
-                  name="resolution"
-                  min="1"
-                  max="20"
-                  value="5"
-                />
+            <div class="canvas-wrapper">
+              <canvas
+                class="my-particle-canvas"
+                id="my-particle-canvas"
+              ></canvas>
+            </div>
+          </div>
+        </section>
+
+        <section class="section services-section extra-section-padding">
+          <div class="container">
+            <h2 class="section-title">Elevate Your Brand</h2>
+            <p class="section-paragraph">
+              We offer a range of services to help your business stand out.
+            </p>
+            <div class="cards-wrapper">
+              <div class="card">
+                <img class="card-img" src="/shapes.png" alt="" />
+                <h3 class="card-title">Branding</h3>
+                <p class="card-paragraph">
+                  Develop a strong brand identity that resonates with your
+                  audience.
+                </p>
+              </div>
+              <div class="card">
+                <img class="card-img" src="/computer.png" alt="" />
+                <h3 class="card-title">Branding</h3>
+                <p class="card-paragraph">
+                  Create a user-friendly and visually appealing website.
+                </p>
+              </div>
+              <div class="card">
+                <img class="card-img" src="/dark-shape.png" alt="" />
+                <h3 class="card-title">Branding</h3>
+                <p class="card-paragraph">
+                  Implement effective strategies to reach your target market.
+                </p>
               </div>
             </div>
           </div>
         </section>
 
-        <section class="empty-section"></section>
-
-        <section class="repulsion-effect">
-          <div class="container">
-            <canvas id="canvas"></canvas>
-
-            <div>
-              <img src="/sample-05.png" alt="" />
-            </div>
-          </div>
-        </section> -->
-
-        <div id="canvas-container">
-          <!-- This sub-container uses Flexbox to arrange its children -->
-          <div class="container">
-            <!-- The left-side content block -->
-            <div class="left-side">
-              <h1>RANDOM TITLE</h1>
-              <p>
-                This is random text to fill the space in here with no sense at
-                all, and i like what im doing in here
-              </p>
-              <button>About Us</button>
-            </div>
-            <div class="canvas-wrapper">
-              <canvas id="my-particle-canvas"></canvas>
-            </div>
-          </div>
-        </div>
+        <section
+          class="sectoin sulotions-section extra-section-padding"
+        ></section>
       </main>
 
       <footer>
@@ -117,6 +116,7 @@
         <p>Made By <a href="/">Amin</a></p>
       </footer>
     </div>
+
     <script type="module" src="/src/main.js"></script>
     <!-- <script type="module" src="/src/ascii.js"></script>
     <script type="module" src="/src/logo-particles.js"></script> -->

@@ -19,98 +19,16 @@ html {
 
 body {
   min-height: 100svh;
-  width: 100vw;
   background: #000;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 button {
   cursor: pointer;
 }
 
-//  ===== second font =====
-// .alegreya-sans-sc-thin {
-//   font-family: "Alegreya Sans SC", sans-serif;
-//   font-weight: 100;
-//   font-style: normal;
-// }
-
-// .alegreya-sans-sc-light {
-//   font-family: "Alegreya Sans SC", sans-serif;
-//   font-weight: 300;
-//   font-style: normal;
-// }
-
-// .alegreya-sans-sc-regular {
-//   font-family: "Alegreya Sans SC", sans-serif;
-//   font-weight: 400;
-//   font-style: normal;
-// }
-
-// .alegreya-sans-sc-medium {
-//   font-family: "Alegreya Sans SC", sans-serif;
-//   font-weight: 500;
-//   font-style: normal;
-// }
-
-// .alegreya-sans-sc-bold {
-//   font-family: "Alegreya Sans SC", sans-serif;
-//   font-weight: 700;
-//   font-style: normal;
-// }
-
-// .alegreya-sans-sc-extrabold {
-//   font-family: "Alegreya Sans SC", sans-serif;
-//   font-weight: 800;
-//   font-style: normal;
-// }
-
-// .alegreya-sans-sc-black {
-//   font-family: "Alegreya Sans SC", sans-serif;
-//   font-weight: 900;
-//   font-style: normal;
-// }
-
-// .alegreya-sans-sc-thin-italic {
-//   font-family: "Alegreya Sans SC", sans-serif;
-//   font-weight: 100;
-//   font-style: italic;
-// }
-
-// .alegreya-sans-sc-light-italic {
-//   font-family: "Alegreya Sans SC", sans-serif;
-//   font-weight: 300;
-//   font-style: italic;
-// }
-
-// .alegreya-sans-sc-regular-italic {
-//   font-family: "Alegreya Sans SC", sans-serif;
-//   font-weight: 400;
-//   font-style: italic;
-// }
-
-// .alegreya-sans-sc-medium-italic {
-//   font-family: "Alegreya Sans SC", sans-serif;
-//   font-weight: 500;
-//   font-style: italic;
-// }
-
-// .alegreya-sans-sc-bold-italic {
-//   font-family: "Alegreya Sans SC", sans-serif;
-//   font-weight: 700;
-//   font-style: italic;
-// }
-
-// .alegreya-sans-sc-extrabold-italic {
-//   font-family: "Alegreya Sans SC", sans-serif;
-//   font-weight: 800;
-//   font-style: italic;
-// }
-
-// .alegreya-sans-sc-black-italic {
-//   font-family: "Alegreya Sans SC", sans-serif;
-//   font-weight: 900;
-//   font-style: italic;
-// }
+// ===== Animation: intro - START  =====
 
 .splash-screen {
   position: fixed;
@@ -179,19 +97,22 @@ button {
   background: white;
 }
 
+/* Animation: intro - END */
+
+.container {
+  padding-inline: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .main-content {
-  .container {
-    padding-inline: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    // outline: 1px solid orange;
-  }
   header {
     min-height: 70px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 6rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
     .logo {
       a {
@@ -243,79 +164,17 @@ button {
       }
     }
   }
+  .section {
+    padding-block: 2rem;
+  }
 
-  main {
-    .hero-section {
-      .container {
-        display: flex;
-        height: calc(100vh - 170px);
-        margin-bottom: 5rem;
-        .right-side {
-          width: 60%;
-        }
-
-        > div {
-          width: 40%;
-          padding: 2rem;
-          border: 1px solid black;
-          color: black;
-
-          canvas {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            display: block;
-            border: 1px solid black;
-            height: auto; // Let aspect-ratio control height
-            max-width: 100%;
-          }
-
-          h2 {
-            color: black;
-          }
-        }
-      }
-    }
+  .extra-section-padding {
+    padding-block: 4rem;
+    margin-block: 2rem;
   }
 }
 
-.repulsion-effect {
-  max-width: 100%;
-  .container {
-    display: flex;
-    border: 1px solid red;
-  }
-
-  #canvas {
-    // max-width: 100%;
-    // width: 95%;
-    // height: 100svh;
-    border: 1px solid orange;
-    width: 50%;
-    height: auto;
-    display: block;
-    // margin: auto;
-    // background: black;
-    // position: fixed;
-    // top: 50%;
-    // left: 50%;
-    // transform: translate(-50%, -50%);
-  }
-}
-
-#test {
-  background: black;
-  display: block;
-}
-
-#canvas-container {
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  background: black;
-  border: 1px solid white;
+.hero-canvas-section {
   .container {
     display: flex;
     flex-wrap: wrap;
@@ -325,23 +184,84 @@ button {
   .left-side {
     flex: 1;
     min-width: 300px;
-  }
-  .left-side h1 {
-    font-size: 2.5rem;
+    margin-top: 2rem;
+
+    .main-title {
+      font-size: 4.6rem;
+      font-weight: 900;
+      margin-bottom: 2rem;
+    }
+    .hero-text {
+      font-size: 1.6rem;
+      max-width: 50ch;
+      margin-bottom: 2.5rem;
+    }
+    .hero-button {
+      background: white;
+      color: black;
+      border: none;
+      font-size: 1.6rem;
+      font-weight: 700;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+    }
   }
 
   .canvas-wrapper {
-    flex: 1;
+    flex: 1.5;
     min-width: 300px;
     height: 650px;
-    border: 1px solid orange;
+    .my-particle-canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      border-radius: 4px;
+    }
   }
+}
 
-  #my-particle-canvas {
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    border-radius: 4px;
+.services-section {
+  .section-title {
+    font-size: 3.6rem;
+    font-weight: 800;
+    margin-bottom: 1.6rem;
+  }
+  .section-paragraph {
+    font-size: 1.6rem;
+    margin-bottom: 4rem;
+  }
+  .cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    .card {
+      flex: 1 1 calc(33.333% - 2rem);
+      border-radius: 8px;
+      cursor: pointer;
+
+      &:hover .card-img {
+        filter: grayscale(0%);
+      }
+
+      .card-img {
+        width: 100%;
+        margin-bottom: 1.2rem;
+        filter: grayscale(100%);
+        transition: filter 0.2s ease;
+      }
+
+      .card-title {
+        font-size: 1.6rem;
+        font-weight: 500;
+        margin-bottom: 0.8rem;
+      }
+
+      .card-paragraph {
+        color: #ababab;
+        font-size: 1.4rem;
+      }
+    }
   }
 }

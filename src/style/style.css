@@ -16,8 +16,9 @@ html {
 
 body {
   min-height: 100svh;
-  width: 100vw;
   background: #000;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 button {
@@ -83,17 +84,20 @@ button {
   background: white;
 }
 
-.main-content .container {
+/* Animation: intro - END */
+.container {
   padding-inline: 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
+
 .main-content header {
   min-height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 6rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 .main-content header .logo a {
   text-decoration: none;
@@ -137,86 +141,93 @@ button {
   color: white;
   cursor: pointer;
 }
-.main-content main .hero-section .container {
-  display: flex;
-  height: calc(100vh - 170px);
-  margin-bottom: 5rem;
+.main-content .section {
+  padding-block: 2rem;
 }
-.main-content main .hero-section .container .right-side {
-  width: 60%;
-}
-.main-content main .hero-section .container > div {
-  width: 40%;
-  padding: 2rem;
-  border: 1px solid black;
-  color: black;
-}
-.main-content main .hero-section .container > div canvas {
-  width: 100%;
-  aspect-ratio: 1/1;
-  display: block;
-  border: 1px solid black;
-  height: auto;
-  max-width: 100%;
-}
-.main-content main .hero-section .container > div h2 {
-  color: black;
+.main-content .extra-section-padding {
+  padding-block: 4rem;
+  margin-block: 2rem;
 }
 
-.repulsion-effect {
-  max-width: 100%;
-}
-.repulsion-effect .container {
-  display: flex;
-  border: 1px solid red;
-}
-.repulsion-effect #canvas {
-  border: 1px solid orange;
-  width: 50%;
-  height: auto;
-  display: block;
-}
-
-#test {
-  background: black;
-  display: block;
-}
-
-#canvas-container {
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  background: black;
-  border: 1px solid white;
-}
-#canvas-container .container {
+.hero-canvas-section .container {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   align-items: center;
 }
-#canvas-container .left-side {
+.hero-canvas-section .left-side {
   flex: 1;
   min-width: 300px;
+  margin-top: 2rem;
 }
-#canvas-container .left-side h1 {
-  font-size: 2.5rem;
+.hero-canvas-section .left-side .main-title {
+  font-size: 4.6rem;
+  font-weight: 900;
+  margin-bottom: 2rem;
 }
-#canvas-container .canvas-wrapper {
-  flex: 1;
+.hero-canvas-section .left-side .hero-text {
+  font-size: 1.6rem;
+  max-width: 50ch;
+  margin-bottom: 2.5rem;
+}
+.hero-canvas-section .left-side .hero-button {
+  background: white;
+  color: black;
+  border: none;
+  font-size: 1.6rem;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+}
+.hero-canvas-section .canvas-wrapper {
+  flex: 1.5;
   min-width: 300px;
   height: 650px;
-  border: 1px solid orange;
 }
-#canvas-container #my-particle-canvas {
+.hero-canvas-section .canvas-wrapper .my-particle-canvas {
   display: block;
   width: 100%;
   height: 100%;
   background-color: #000;
   border-radius: 4px;
+}
+
+.services-section .section-title {
+  font-size: 3.6rem;
+  font-weight: 800;
+  margin-bottom: 1.6rem;
+}
+.services-section .section-paragraph {
+  font-size: 1.6rem;
+  margin-bottom: 4rem;
+}
+.services-section .cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.services-section .cards-wrapper .card {
+  flex: 1 1 calc(33.333% - 2rem);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.services-section .cards-wrapper .card:hover .card-img {
+  filter: grayscale(0%);
+}
+.services-section .cards-wrapper .card .card-img {
+  width: 100%;
+  margin-bottom: 1.2rem;
+  filter: grayscale(100%);
+  transition: filter 0.2s ease;
+}
+.services-section .cards-wrapper .card .card-title {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+.services-section .cards-wrapper .card .card-paragraph {
+  color: #ababab;
+  font-size: 1.4rem;
 }
 
 /*# sourceMappingURL=style.css.map */
