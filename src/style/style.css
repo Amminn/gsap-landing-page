@@ -145,8 +145,8 @@ button {
   padding-block: 2rem;
 }
 .main-content .extra-section-padding {
-  padding-block: 4rem;
-  margin-block: 2rem;
+  display: block;
+  padding-block: 12rem;
 }
 
 .hero-canvas-section .container {
@@ -192,42 +192,118 @@ button {
   border-radius: 4px;
 }
 
-.services-section .section-title {
+.secondary-section .section-title {
   font-size: 3.6rem;
   font-weight: 800;
   margin-bottom: 1.6rem;
 }
-.services-section .section-paragraph {
+.secondary-section .section-paragraph {
   font-size: 1.6rem;
   margin-bottom: 4rem;
 }
-.services-section .cards-wrapper {
+.secondary-section .cards-wrapper {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
 }
-.services-section .cards-wrapper .card {
+.secondary-section .cards-wrapper .card {
   flex: 1 1 calc(33.333% - 2rem);
   border-radius: 8px;
   cursor: pointer;
 }
-.services-section .cards-wrapper .card:hover .card-img {
+.secondary-section .cards-wrapper .card:hover .card-img {
   filter: grayscale(0%);
 }
-.services-section .cards-wrapper .card .card-img {
+.secondary-section .cards-wrapper .card .card-img {
   width: 100%;
   margin-bottom: 1.2rem;
   filter: grayscale(100%);
   transition: filter 0.2s ease;
 }
-.services-section .cards-wrapper .card .card-title {
+.secondary-section .cards-wrapper .card .card-title {
   font-size: 1.6rem;
   font-weight: 500;
   margin-bottom: 0.8rem;
 }
-.services-section .cards-wrapper .card .card-paragraph {
+.secondary-section .cards-wrapper .card .card-paragraph {
   color: #ababab;
   font-size: 1.4rem;
+}
+
+.solutions-section .dark-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+.solutions-section .dark-card {
+  flex: 1 1 calc(33.333% - 2rem);
+  background: #2c2c2c;
+  border-radius: 8px;
+  padding: 2rem;
+  transition: transform 0.3s ease;
+}
+.solutions-section .dark-card .icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+  margin-bottom: 1.2rem;
+}
+.solutions-section .dark-card .dark-card__title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.solutions-section .dark-card .dark-card__paragraph {
+  color: #ababab;
+  font-size: 1.4rem;
+}
+
+.cta-section {
+  text-align: center;
+}
+.cta-section .cta-button {
+  background: white;
+  color: black;
+  border: none;
+  font-size: 1.6rem;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+}
+
+.footer {
+  padding-block: 4rem;
+}
+.footer ul {
+  list-style-type: none;
+  display: flex;
+  gap: 2rem;
+}
+.footer ul li {
+  font-size: 1.6rem;
+  color: #ababab;
+}
+.footer .footer-links {
+  justify-content: center;
+  margin-bottom: 24px;
+  gap: 0;
+}
+.footer .footer-links li {
+  margin-inline: auto;
+  min-width: 120px;
+  text-align: center;
+}
+.footer .social-icons {
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 34px;
+}
+.footer .footer-copyright {
+  text-align: center;
+  font-size: 1.4rem;
+  color: #ababab;
+  margin-top: 2rem;
 }
 
 /*# sourceMappingURL=style.css.map */

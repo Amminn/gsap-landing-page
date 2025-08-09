@@ -169,8 +169,8 @@ button {
   }
 
   .extra-section-padding {
-    padding-block: 4rem;
-    margin-block: 2rem;
+    display: block;
+    padding-block: 12rem;
   }
 }
 
@@ -221,7 +221,7 @@ button {
   }
 }
 
-.services-section {
+.secondary-section {
   .section-title {
     font-size: 3.6rem;
     font-weight: 800;
@@ -263,5 +263,90 @@ button {
         font-size: 1.4rem;
       }
     }
+  }
+}
+
+.solutions-section {
+  .dark-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+  }
+
+  .dark-card {
+    flex: 1 1 calc(33.333% - 2rem);
+    background: #2c2c2c;
+    border-radius: 8px;
+    padding: 2rem;
+    // cursor: pointer;
+    transition: transform 0.3s ease;
+
+    .icon {
+      width: 24px;
+      height: 24px;
+      display: block;
+      margin-bottom: 1.2rem;
+    }
+
+    .dark-card__title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .dark-card__paragraph {
+      color: #ababab;
+      font-size: 1.4rem;
+    }
+  }
+}
+
+.cta-section {
+  text-align: center;
+
+  .cta-button {
+    background: white;
+    color: black;
+    border: none;
+    font-size: 1.6rem;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+  }
+}
+
+.footer {
+  padding-block: 4rem;
+  ul {
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+    li {
+      font-size: 1.6rem;
+      color: #ababab;
+    }
+  }
+
+  .footer-links {
+    justify-content: center;
+    margin-bottom: 24px;
+    gap: 0;
+    li {
+      margin-inline: auto;
+      min-width: 120px;
+      text-align: center;
+    }
+  }
+  .social-icons {
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 34px;
+  }
+  .footer-copyright {
+    text-align: center;
+    font-size: 1.4rem;
+    color: #ababab;
+    margin-top: 2rem;
   }
 }
