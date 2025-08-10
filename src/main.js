@@ -1,24 +1,45 @@
 import { gsap } from "gsap";
+import { GSDevTools } from "gsap/GSDevTools";
+
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+// ScrollSmoother requires ScrollTrigger
+import { ScrollSmoother } from "gsap/ScrollSmoother";
+
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother, GSDevTools);
 
 const progressLine = document.querySelector(".progress-line");
 const counterContainer = document.querySelector(".counter");
 const progressCounter = document.querySelector(".progress-value");
 const splashScreen = document.querySelector(".splash-screen");
 
-let shouldAnimateWrapper = true;
+ScrollSmoother.create({
+  smooth: 1.4,
+  effects: true,
+});
 
-// An object to animate a value from 0 to 100
+let shouldAnimateWrapper = true;
 const counter = { value: 0 };
 
-// Clean GSAP counter animation with progress bar
-gsap.to(counter, {
-  value: 100,
-  // duration: 6,
-  duration: 0.1,
-  ease: "circ.out",
+// Create a master timeline
+const masterTL = gsap.timeline({
   onUpdate: updateProgress,
-  onComplete: hideSplashScreen,
 });
+
+// Step 1: Counter animation
+masterTL.to(counter, {
+  value: 100,
+  duration: 6,
+  ease: "circ.out",
+});
+
+// Step 2: Hide splash screen
+masterTL.add(hideSplashScreen);
+
+// Attach GSDevTools to the master timeline
+// GSDevTools.create({
+//   animation: masterTL,
+//   minimal: false, // show all controls
+// });
 
 function updateProgress() {
   progressLine.style.width = `${counter.value}%`;
@@ -28,15 +49,14 @@ function updateProgress() {
 function hideSplashScreen() {
   const tl = gsap.timeline();
   const elementsToHide = [coolAnimation, progressLine, counterContainer];
+
   tl.to(elementsToHide, {
     opacity: "0",
-    duration: 0.1,
-    // duration: 0.3,
+    duration: 0.3,
   }).to(splashScreen, {
     height: "0",
     y: "-100%",
     duration: 1,
-    duration: 0.1,
     ease: "power2.inOut",
     onComplete: () => {
       shouldAnimateWrapper = false;
@@ -46,9 +66,13 @@ function hideSplashScreen() {
       clearTimeout(resizeTimeout);
     },
   });
+
+  return tl; // Return timeline so it plays in masterTL
 }
 
-// The rest of your slider animation code can remain as is
+// ==================
+// Slider animation
+// ==================
 const ySlider = document.querySelector(".y-slider");
 const coolAnimation = document.querySelector(".cool-animation");
 
@@ -78,7 +102,6 @@ if (ySlider && coolAnimation) {
   }
 
   animateSlider();
-
   window.addEventListener("resize", handleResize);
 }
 
@@ -91,3 +114,44 @@ function handleResize() {
     console.log("Window resized, next animation cycle will use new height.");
   }, 100);
 }
+
+const logo = document.querySelector(".logo");
+const nav = document.querySelector(".nav");
+const cta = document.querySelector(".cta");
+
+const mainTitle = document.querySelector(".main-title");
+const heroText = document.querySelector(".hero-text");
+const heroButton = document.querySelector(".hero-button");
+
+const canvasWrapper = document.querySelector(".canvas-wrapper");
+
+// Create a timeline for hero section elements
+const heroTL = gsap.timeline({ paused: true });
+
+heroTL
+  .from(logo, { opacity: 0, y: -30, duration: 0.6, ease: "power2.out" })
+  .from(nav, { opacity: 0, y: -30, duration: 0.6, ease: "power2.out" }, "-=0.4")
+  .from(cta, { opacity: 0, y: -30, duration: 0.6, ease: "power2.out" }, "-=0.4")
+  .from(
+    mainTitle,
+    { opacity: 0, y: 40, duration: 0.7, ease: "power2.out" },
+    "-=0.3"
+  )
+  .from(
+    heroText,
+    { opacity: 0, y: 40, duration: 0.7, ease: "power2.out" },
+    "-=0.5"
+  )
+  .from(
+    heroButton,
+    { opacity: 0, scale: 0.8, duration: 0.5, ease: "back.out(1.7)" },
+    "-=0.4"
+  )
+  .from(
+    canvasWrapper,
+    { opacity: 0, duration: 0.7, ease: "power2.out" },
+    "-=0.5"
+  );
+
+// Play the timeline after splash screen animation completes
+masterTL.add(() => heroTL.play());

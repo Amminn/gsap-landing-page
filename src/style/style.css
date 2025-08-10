@@ -31,8 +31,8 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #000;
-  color: white;
+  background-color: white;
+  color: black;
   padding-block: 2rem;
 }
 .splash-screen .container {
@@ -64,7 +64,6 @@ button {
   display: flex;
   flex-direction: column;
   min-width: fit-content;
-  text-align: center;
 }
 .splash-screen .container .cool-animation .wrapper .y-slider span {
   display: inline-block;
@@ -81,7 +80,7 @@ button {
   margin-top: auto;
   width: 0%;
   height: 5px;
-  background: white;
+  background: black;
 }
 
 /* Animation: intro - END */
@@ -211,14 +210,16 @@ button {
   border-radius: 8px;
   cursor: pointer;
 }
-.secondary-section .cards-wrapper .card:hover .card-img {
-  filter: grayscale(0%);
-}
 .secondary-section .cards-wrapper .card .card-img {
   width: 100%;
   margin-bottom: 1.2rem;
   filter: grayscale(100%);
+  position: relative;
+  z-index: -1;
   transition: filter 0.2s ease;
+}
+.secondary-section .cards-wrapper .card:hover .card-img {
+  filter: grayscale(0%);
 }
 .secondary-section .cards-wrapper .card .card-title {
   font-size: 1.6rem;
