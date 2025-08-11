@@ -25,8 +25,8 @@ const counter = { value: 0 };
 // Clean GSAP counter animation with progress bar
 gsap.to(counter, {
   value: 100,
-  duration: 6,
-  // duration: 0.1,
+  // duration: 6,
+  duration: 0.1,
   ease: "circ.out",
   onUpdate: updateProgress,
   onComplete: hideSplashScreen,
@@ -42,8 +42,8 @@ function hideSplashScreen() {
   const elementsToHide = [coolAnimation, progressLine, counterContainer];
   tl.to(elementsToHide, {
     opacity: "0",
-    // duration: 0.1,
-    duration: 0.3,
+    duration: 0.1,
+    // duration: 0.3,
   }).to(splashScreen, {
     height: "0",
     y: "-100%",
@@ -169,10 +169,24 @@ function heroAnimation() {
     .fromTo(
       canvasWrapper,
       { opacity: 0 },
-      { opacity: 1, duration: 0.7, ease: "power2.out" },
-      "-=0.5"
+      { opacity: 1, duration: 1.2, ease: "power2.out" },
+      "-=0.3"
     );
 }
 
-// Play the timeline after splash screen animation completes
-// masterTL.add(() => heroTL.play());
+gsap.registerPlugin(ScrollTrigger);
+
+// Select all sections you want to animate
+gsap.utils.toArray(".section").forEach((section) => {
+  gsap.from(section, {
+    opacity: 0,
+    y: 50, // slide up slightly
+    duration: 1,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: section,
+      start: "top 80%", // when section top reaches 80% of viewport
+      toggleActions: "play none none reverse",
+    },
+  });
+});
