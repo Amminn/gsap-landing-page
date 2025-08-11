@@ -177,16 +177,16 @@ function heroAnimation() {
 gsap.registerPlugin(ScrollTrigger);
 
 // Select all sections you want to animate
-gsap.utils.toArray(".section").forEach((section) => {
-  gsap.from(section, {
-    opacity: 0,
-    y: 50, // slide up slightly
+gsap.utils.toArray(".section").forEach((section, index) => {
+  gsap.to(section, {
+    opacity: 1,
     duration: 1,
     ease: "power2.out",
     scrollTrigger: {
       trigger: section,
-      start: "top 80%", // when section top reaches 80% of viewport
+      start: "top 62%", // First section = 60%, rest = 80%
       toggleActions: "play none none reverse",
+      markers: true,
     },
   });
 });
