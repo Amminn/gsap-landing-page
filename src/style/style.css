@@ -98,6 +98,9 @@ button {
   margin-bottom: 6rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
+.main-content header .logo {
+  opacity: 0;
+}
 .main-content header .logo a {
   text-decoration: none;
   font-size: 2.4rem;
@@ -112,6 +115,7 @@ button {
 }
 .main-content header .header-right .nav {
   color: white;
+  overflow: hidden;
 }
 .main-content header .header-right .nav ul {
   list-style-type: none;
@@ -119,15 +123,21 @@ button {
   gap: 2rem;
   align-items: center;
 }
-.main-content header .header-right .nav ul a {
+.main-content header .header-right .nav ul li {
+  opacity: 0;
+}
+.main-content header .header-right .nav ul li a {
   font-size: 1.6rem;
   text-decoration: none;
   color: white;
   font-weight: 500;
   transition: opacity 0.3s ease;
 }
-.main-content header .header-right .nav ul a:hover {
+.main-content header .header-right .nav ul li a:hover {
   opacity: 0.7;
+}
+.main-content header .header-right .cta {
+  opacity: 0;
 }
 .main-content header .header-right .cta button {
   border: 1px solid rgb(63, 63, 63);
@@ -160,16 +170,19 @@ button {
   margin-top: 2rem;
 }
 .hero-canvas-section .left-side .main-title {
+  opacity: 0;
   font-size: 4.6rem;
   font-weight: 900;
   margin-bottom: 2rem;
 }
 .hero-canvas-section .left-side .hero-text {
+  opacity: 0;
   font-size: 1.6rem;
   max-width: 50ch;
   margin-bottom: 2.5rem;
 }
 .hero-canvas-section .left-side .hero-button {
+  opacity: 0;
   background: white;
   color: black;
   border: none;
@@ -179,6 +192,7 @@ button {
   border-radius: 8px;
 }
 .hero-canvas-section .canvas-wrapper {
+  opacity: 0;
   flex: 1.5;
   min-width: 300px;
   height: 650px;
